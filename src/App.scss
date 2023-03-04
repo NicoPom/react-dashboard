@@ -12,12 +12,19 @@ img {
 }
 
 /* Global styles */
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
 
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #333;
+  background-color: rgb(34, 83, 167);
 }
 
 a {
