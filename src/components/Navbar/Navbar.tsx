@@ -1,18 +1,26 @@
+import spotifySvg from "../../assets/spotify.svg";
+import clockSvg from "../../assets/clock.svg";
 
-import spotifySvg from '../../assets/spotify.svg'
-import clockSvg from '../../assets/clock.svg'
-
-function Navbar() {
-  return <nav>
-        <ul>
-          <li>
-            <img src={spotifySvg} alt="spotify_svg" />
-          </li>
-          <li>
-            <img src={clockSvg} alt="clock_svg" />
-          </li>
-        </ul>
-      </nav>;
+interface NavbarProps {
+  toggleSpotify: () => void;
+  toggleClock: () => void;
 }
+
+const Navbar: React.FC<NavbarProps> = ({ toggleSpotify, toggleClock }) => (
+  <nav className="navbar widget">
+    <ul>
+      <li>
+        <button>
+          <img src={spotifySvg} alt="spotify_svg" onClick={toggleSpotify} />
+        </button>
+      </li>
+      <li>
+        <button>
+          <img src={clockSvg} alt="clock_svg" onClick={toggleClock} />
+        </button>
+      </li>
+    </ul>
+  </nav>
+);
 
 export default Navbar;
