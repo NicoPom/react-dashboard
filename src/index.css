@@ -10,3 +10,19 @@
 img {
   max-width: 100%;
 }
+
+/* Global styles */
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Layout */
