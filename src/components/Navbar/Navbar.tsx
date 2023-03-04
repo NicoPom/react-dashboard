@@ -1,17 +1,18 @@
 
 import spotifySvg from '../../assets/spotify.svg'
-import timeSvg from '../../assets/time.svg'
+import clockSvg from '../../assets/clock.svg'
 
-export function Navbar() {
+function Navbar() {
   return <nav>
         <ul>
           <li>
             <img src={spotifySvg} alt="spotify_svg" />
           </li>
           <li>
-            <img src={timeSvg} alt="time_svg" />
+            <img src={clockSvg} alt="clock_svg" />
           </li>
         </ul>
       </nav>;
 }
-  
+
+export default Navbar;
