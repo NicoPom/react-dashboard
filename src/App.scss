@@ -11,6 +11,16 @@ img {
   max-width: 100%;
 }
 
+/* Colors */
+
+:root{
+  --color-primary: rgba(239, 229, 229, 0.5);
+  --color-secondary: #333;
+  --color-tertiary: #444;
+
+  --text-primary: #333;
+}
+
 /* Global styles */
 html,
 body,
@@ -23,7 +33,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #333;
+  color: var(--text-primary);
   background-color: rgb(34, 83, 167);
 }
 
@@ -32,4 +42,10 @@ a {
   color: #333;
 }
 
-/* Layout */
+/* widgets */
+
+.widget{
+  background-color: var(--color-primary);
+}
+
+

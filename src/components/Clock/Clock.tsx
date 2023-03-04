@@ -11,7 +11,7 @@ function Clock({}) {
   }, []);
 
   return (
-    <div className="time">
+    <div className="clock widget">
       <h2>Time</h2>
       <p>
         {date.toLocaleDateString("en-GB", {

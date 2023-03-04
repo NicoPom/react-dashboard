@@ -1,3 +1,4 @@
+import Spotify from "./components/Spotify/Spotify";
 import Clock from "./components/Clock/Clock";
 import Navbar from "./components/Navbar/Navbar";
 import "./App.scss";
@@ -10,10 +11,7 @@ function App() {
       </header>
       <main>
         <Clock />
-        <div className="spotify">
-          <h2>Spotify</h2>
-          <p>Nothing playing</p>
-        </div>
+        <Spotify />
       </main>
     </div>
   );
