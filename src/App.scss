@@ -14,7 +14,7 @@ img {
 /* Colors */
 
 :root {
-  --color-primary: rgb(255, 255, 255);
+  --color-primary: rgba(255, 255, 255, 0.82);
   --color-secondary: #333;
   --color-tertiary: #444;
 
@@ -53,6 +53,7 @@ ul {
 /* widgets */
 
 .widget {
+  display: inline-block;
   background-color: var(--color-primary);
   width: fit-content;
   padding: 1em;
