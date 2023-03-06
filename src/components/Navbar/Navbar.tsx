@@ -1,23 +1,29 @@
 import spotifySvg from "../../assets/spotify.svg";
 import clockSvg from "../../assets/clock.svg";
+import timerSvg from "../../assets/timer.svg";
+import "./navbar.scss";
 
 interface NavbarProps {
   toggleSpotify: () => void;
   toggleClock: () => void;
+  togglePomodoro: () => void;
 }
 
-const Navbar = ({ toggleSpotify, toggleClock }: NavbarProps) => (
+const Navbar = ({
+  toggleSpotify,
+  toggleClock,
+  togglePomodoro,
+}: NavbarProps) => (
   <nav className="navbar widget">
     <ul>
       <li>
-        <button>
-          <img src={spotifySvg} alt="spotify_svg" onClick={toggleSpotify} />
-        </button>
+        <img src={spotifySvg} alt="spotify_svg" onClick={toggleSpotify} />
       </li>
       <li>
-        <button>
-          <img src={clockSvg} alt="clock_svg" onClick={toggleClock} />
-        </button>
+        <img src={clockSvg} alt="clock_svg" onClick={toggleClock} />
+      </li>
+      <li>
+        <img src={timerSvg} alt="timer_svg" onClick={togglePomodoro} />
       </li>
     </ul>
   </nav>

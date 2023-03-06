@@ -1,0 +1,11 @@
+.navbar {
+  ul {
+    display: flex;
+    gap: 1em;
+  }
+
+  li {
+    cursor: pointer;
+    display: flex; // to remove the margin between the li and the img
+  }
+}

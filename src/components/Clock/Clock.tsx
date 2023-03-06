@@ -13,7 +13,6 @@ const Clock = () => {
 
   return (
     <div className="clock widget">
-      <h2>Time</h2>
       <p>
         {date.toLocaleDateString("en-GB", {
           day: "numeric",
@@ -21,7 +20,7 @@ const Clock = () => {
           year: "numeric",
         })}
       </p>
-      <h2>Date</h2>
+
       <p>
         {date.toLocaleTimeString("en-US", {
           hour: "numeric",
