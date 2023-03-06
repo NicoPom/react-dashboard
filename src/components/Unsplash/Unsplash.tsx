@@ -26,7 +26,7 @@ const Unsplash = ({ onPhotoClick }: UnsplashProps) => {
   const searchPhotos = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const response = await fetch(
-      `https://api.unsplash.com/search/photos?query=${query}&client_id=${ACCESS_KEY}&orientation=landscape`
+      `https://api.unsplash.com/search/photos?query=${query}&client_id=${ACCESS_KEY}&orientation=landscape&per_page=20`
     );
     const data = await response.json();
     setPhotos(data.results);
@@ -34,6 +34,7 @@ const Unsplash = ({ onPhotoClick }: UnsplashProps) => {
 
   const handlePhotoClick = (photoUrl: string) => {
     onPhotoClick(photoUrl);
+    setPhotos([]);
   };
 
   return (
@@ -58,7 +59,7 @@ const Unsplash = ({ onPhotoClick }: UnsplashProps) => {
                 src={photo.urls.small}
                 alt={photo.alt_description}
                 key={photo.id}
-                onClick={() => handlePhotoClick(photo.urls.regular)}
+                onClick={() => handlePhotoClick(photo.urls.full)}
               />
             )
           )}
