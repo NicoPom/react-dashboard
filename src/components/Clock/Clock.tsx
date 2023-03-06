@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
+
 function Clock() {
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState<Date>(new Date());
 
   // update the time every second
-
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       setDate(new Date());
     }, 1000);
+    return () => clearInterval(interval); // cleanup
   }, []);
 
   return (
