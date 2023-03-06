@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+//styles
+import "./unsplash.scss";
+
 // interface for the photo object returned from the Unsplash API
 interface Photo {
   id: string;
@@ -40,11 +43,11 @@ const Unsplash = ({ onPhotoClick }: UnsplashProps) => {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search photos on Unsplash"
+          placeholder="Search background image"
         />
         <button type="submit">Search</button>
       </form>
-      <div>
+      <div className="overlay">
         {photos.map(
           (
             photo: any
@@ -57,6 +60,7 @@ const Unsplash = ({ onPhotoClick }: UnsplashProps) => {
             />
           )
         )}
+        button
       </div>
     </div>
   );
