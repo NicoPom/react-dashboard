@@ -8,6 +8,7 @@ import "./App.scss";
 function App(): JSX.Element {
   const [spotify, setSpotify] = useState<boolean>(false);
   const [clock, setClock] = useState<boolean>(false);
+  const [backgroundUrl, setBackgroundUrl] = useState("");
 
   const toggleSpotify = () => {
     setSpotify(!spotify);
@@ -17,8 +18,12 @@ function App(): JSX.Element {
     setClock(!clock);
   };
 
+  const handlePhotoClick = (photoUrl: string) => {
+    setBackgroundUrl(`url(${photoUrl})`);
+  };
+
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundImage: backgroundUrl }}>
       <header>
         <Navbar
           toggleSpotify={() => toggleSpotify()}
@@ -31,7 +36,7 @@ function App(): JSX.Element {
       </main>
       <footer>
         <div className="settings">
-          <Unsplash />
+          <Unsplash onPhotoClick={handlePhotoClick} />
         </div>
       </footer>
     </div>

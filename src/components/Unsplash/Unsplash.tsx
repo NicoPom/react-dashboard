@@ -1,8 +1,23 @@
 import React, { useState } from "react";
 
-const SearchPhotos: React.FC = () => {
+// interface for the photo object returned from the Unsplash API
+interface Photo {
+  id: string;
+  urls: {
+    small: string;
+    regular: string;
+    full: string;
+  };
+  alt_description: string;
+}
+
+interface UnsplashProps {
+  onPhotoClick: (photoUrl: string) => void;
+}
+
+const Unsplash = ({ onPhotoClick }: UnsplashProps) => {
   const [query, setQuery] = useState<string>("");
-  const [photos, setPhotos] = useState<Array<any>>([]);
+  const [photos, setPhotos] = useState<Photo[]>([]);
   const ACCESS_KEY: string = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
 
   const searchPhotos = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -14,7 +29,9 @@ const SearchPhotos: React.FC = () => {
     setPhotos(data.results);
   };
 
-  console.log(photos);
+  const handlePhotoClick = (photoUrl: string) => {
+    onPhotoClick(photoUrl);
+  };
 
   return (
     <div>
@@ -36,6 +53,7 @@ const SearchPhotos: React.FC = () => {
               src={photo.urls.small}
               alt={photo.alt_description}
               key={photo.id}
+              onClick={() => handlePhotoClick(photo.urls.regular)}
             />
           )
         )}
@@ -44,4 +62,4 @@ const SearchPhotos: React.FC = () => {
   );
 };
 
-export default SearchPhotos;
+export default Unsplash;
