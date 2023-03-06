@@ -14,7 +14,7 @@ img {
 /* Colors */
 
 :root{
-  --color-primary: rgba(239, 229, 229, 0.5);
+  --color-primary: rgb(255, 255, 255);
   --color-secondary: #333;
   --color-tertiary: #444;
 
@@ -63,4 +63,9 @@ ul{
   border-radius: 0.7em;
 }
 
+/* Layout */
+
+.App{
+  padding: 1em;
+}
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-function Clock({}) {
+function Clock() {
   const [date, setDate] = useState(new Date());
 
   // update the time every second
@@ -25,7 +25,7 @@ function Clock({}) {
         {date.toLocaleTimeString("en-US", {
           hour: "numeric",
           minute: "numeric",
-          // second: "numeric",
+          second: "numeric",
           hour12: true,
         })}
       </p>

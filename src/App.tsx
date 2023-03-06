@@ -1,8 +1,12 @@
 import { useState } from "react";
 
+// Components
 import Spotify from "./components/Spotify/Spotify";
 import Clock from "./components/Clock/Clock";
 import Navbar from "./components/Navbar/Navbar";
+import Unsplash from "./components/Unsplash/Unsplash";
+
+// Styles
 import "./App.scss";
 
 function App() {
@@ -28,6 +32,11 @@ function App() {
         {clock && <Clock />}
         {spotify && <Spotify />}
       </main>
+      <footer>
+        <div className="settings">
+          <Unsplash />
+        </div>
+      </footer>
     </div>
   );
 }
