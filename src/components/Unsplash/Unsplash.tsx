@@ -47,21 +47,23 @@ const Unsplash = ({ onPhotoClick }: UnsplashProps) => {
         />
         <button type="submit">Search</button>
       </form>
-      <div className="overlay">
-        {photos.map(
-          (
-            photo: any
-          ) /* In a real-world scenario, it would be better to define an interface or type for the photo object to ensure type safety throughout the codebase.*/ => (
-            <img
-              src={photo.urls.small}
-              alt={photo.alt_description}
-              key={photo.id}
-              onClick={() => handlePhotoClick(photo.urls.regular)}
-            />
-          )
-        )}
-        button
-      </div>
+
+      {photos.length > 0 && (
+        <div className="overlay">
+          {photos.map(
+            (
+              photo: any
+            ) /* In a real-world scenario, it would be better to define an interface or type for the photo object to ensure type safety throughout the codebase.*/ => (
+              <img
+                src={photo.urls.small}
+                alt={photo.alt_description}
+                key={photo.id}
+                onClick={() => handlePhotoClick(photo.urls.regular)}
+              />
+            )
+          )}
+        </div>
+      )}
     </div>
   );
 };
