@@ -1,17 +1,13 @@
 import { useState } from "react";
-
-// Components
 import Spotify from "./components/Spotify/Spotify";
 import Clock from "./components/Clock/Clock";
 import Navbar from "./components/Navbar/Navbar";
 import Unsplash from "./components/Unsplash/Unsplash";
-
-// Styles
 import "./App.scss";
 
-function App() {
-  const [spotify, setSpotify] = useState(false);
-  const [clock, setClock] = useState(false);
+function App(): JSX.Element {
+  const [spotify, setSpotify] = useState<boolean>(false);
+  const [clock, setClock] = useState<boolean>(false);
 
   const toggleSpotify = () => {
     setSpotify(!spotify);
@@ -20,6 +16,7 @@ function App() {
   const toggleClock = () => {
     setClock(!clock);
   };
+
   return (
     <div className="App">
       <header>
