@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Spotify from "./components/Spotify/Spotify";
 import Clock from "./components/Clock/Clock";
 import Navbar from "./components/Navbar/Navbar";
 import Unsplash from "./components/Unsplash/Unsplash";
 import "./App.scss";
 
-const App = () => {
+const App: React.FC = () => {
   const [spotify, setSpotify] = useState<boolean>(false);
   const [clock, setClock] = useState<boolean>(false);
-  const [backgroundUrl, setBackgroundUrl] = useState("");
+  const [backgroundUrl, setBackgroundUrl] = useState<string>("");
+
+  useEffect(() => {
+    const savedBackgroundUrl = localStorage.getItem("backgroundUrl");
+    if (savedBackgroundUrl) {
+      setBackgroundUrl(`url(${savedBackgroundUrl})`);
+    }
+  }, []);
 
   const toggleSpotify = () => {
     setSpotify(!spotify);
@@ -20,6 +27,7 @@ const App = () => {
 
   const handlePhotoClick = (photoUrl: string) => {
     setBackgroundUrl(`url(${photoUrl})`);
+    localStorage.setItem("backgroundUrl", photoUrl);
   };
 
   return (
