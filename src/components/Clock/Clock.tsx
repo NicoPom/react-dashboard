@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function Clock() {
+const Clock = () => {
   const [date, setDate] = useState<Date>(new Date());
 
   // update the time every second
@@ -32,6 +32,6 @@ function Clock() {
       </p>
     </div>
   );
-}
+};
 
 export default Clock;

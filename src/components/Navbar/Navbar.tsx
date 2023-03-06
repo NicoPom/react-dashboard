@@ -6,7 +6,7 @@ interface NavbarProps {
   toggleClock: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ toggleSpotify, toggleClock }) => (
+const Navbar = ({ toggleSpotify, toggleClock }: NavbarProps) => (
   <nav className="navbar widget">
     <ul>
       <li>

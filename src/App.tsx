@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Unsplash from "./components/Unsplash/Unsplash";
 import "./App.scss";
 
-function App(): JSX.Element {
+const App = () => {
   const [spotify, setSpotify] = useState<boolean>(false);
   const [clock, setClock] = useState<boolean>(false);
   const [backgroundUrl, setBackgroundUrl] = useState("");
@@ -41,6 +41,6 @@ function App(): JSX.Element {
       </footer>
     </div>
   );
-}
+};
 
 export default App;
